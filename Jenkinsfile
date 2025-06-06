@@ -2,17 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'git@github.com:WEIXUCHEN111/test_ws.git'
-            }
-        }
-
         stage('Build C++') {
             steps {
-                dir('src/cpp_demo') {
-                    sh 'g++ main.cpp -o main'
-                }
+                sh 'g++ src/cpp_demo/main.cpp -o src/cpp_demo/main'
             }
         }
 
